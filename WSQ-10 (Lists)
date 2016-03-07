@@ -1,0 +1,34 @@
+import math
+
+def total(x):
+    return sum (x)
+
+def average(x):
+    ave=len(x)
+    return total(x)/ave
+
+def variance(x):
+    b=0
+    for i in x:
+        a=(i-average(x))**2
+        b=b+a
+    return b/len(x)
+
+def stan_dev(x):
+    return math.sqrt(variance(x))
+
+
+print("This program will ask you for 10 numbers and then it will give you the total, the average and the standard deviation.")
+count=1
+# Creating a list
+x=[]
+while(count<=10):
+    number=int(input("Give me the "+ str(count) +" number: "))
+    count+=1
+    x.append(number)
+
+print (x)
+print(total(x))
+print (average(x))
+print (variance(x))
+print (stan_dev(x))

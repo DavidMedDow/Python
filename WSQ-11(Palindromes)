@@ -1,0 +1,46 @@
+number1 = input("Give me the lower bound: ")        # I get the numbers as a string first
+number2 = input("Give me the upper bound: ")
+lista = []      # I create the list
+nat_count = 0           # I create a counter for natural palindromes
+nonat_count = 0         # I create a counter for no-natural palindromes
+lychrel_count = 0       # I create a counter for lychrel candidates
+num1 = int(number1)         # I convert the string numbers to integer numbers
+num2 = int(number2)
+
+while (num1 != num2):       # While number1 is different to number2
+    lista.append(num1)      # add the number1 to the list and after
+    num1 = num1 + 1         # that add to number1 1 number
+lista.append(num1)    # Add the last number to the list
+
+for i in lista:     # For every element on the list do:
+    result = str(i)     # Convert every element to a string
+    test = result[::-1]         # Invert every element and add the result to a new value
+
+    result2 = int(result)       # Transform it again to a integer
+    test2 = int(test)       # Transform the invert form to a integer too
+
+    if (result == test):        # Natural palindromes
+        nat_count += 1          # Add one to the natural palindromes counter
+
+    else:
+        count = 0       # I will use this to have a counting cicle
+        while (result != test and count<=30):         # Cicle for no-natural palindromes
+            prueba = result2 + test2        # Sum the number and the inverse
+            prueba2 = str(prueba)           # Convert to string the result
+            prueba3 = prueba2[::-1]         # Invert the result
+            result = prueba2            # Include the values of the result to the result variable
+            test = prueba3             # Include the inverse value to the test variable
+            result2 = int(prueba2)      # I put the new value in the variable result2
+            test2 = int(prueba3)        # I put the new inverse value in the variable test2
+            count = count + 1          # Add to the count variable one number
+        if (result == test):    # If you find a no-natural number do the following:
+            nonat_count += 1            # Add one to the no-natural palindromes counter
+
+        else:
+            lychrel_count += 1          # Add one to the lychrel candidates numbers
+            print ("Found Lychrel number: " + str(i))
+
+print ("The range of numbers is from " + number1 + " to " + number2)            # Print the range of numbers that the program is using
+print ("The numbers that are natural palindromes are " + str(nat_count))          # Print the counter of natural palindromes numbers
+print ("The numbers that are no-natural palindromes are " + str(nonat_count))         # Print the counter of no-natural palindromes numbers
+print ("The numbers that are Lychrel candidates are " + str(lychrel_count))          # Print the counter of Lychrel candidates numbers

@@ -1,0 +1,15 @@
+A = 270
+B = 192
+
+def euclid_al(A,B):
+    while(A!=0 and B!=0):
+            div = A//B
+            res = A%B
+            A = B
+            B = res
+    if A == 0:
+        print ("The greater common divisor is "+str(B))
+    elif B == 0:
+        print ("The greater common divisor is "+str(A))
+
+euclid_al(A,B)

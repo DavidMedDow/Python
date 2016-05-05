@@ -15,8 +15,7 @@ def euler_calc(x):  # I define the euler function here
         n = n + 1
         prev = e
         difference = abs (e - previus)
-        print ("n is: " , n , " e is :" , e)
     return e
 
-number = euler_calc(0.00000000000000000000000000000000000000000001)         # This is the exactitud what the program will use 
+number = euler_calc(0.00000000000000000000000000000000000000000001)         # This is the exactitud what the program will use
 print (number)

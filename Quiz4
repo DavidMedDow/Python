@@ -1,0 +1,22 @@
+def factorial(x):   # I define the factorial fuction here
+    r = 1
+    for i in range(1,x+1):
+        r = r * i
+    return (r)
+
+def euler_calc(x):  # I define the euler function here
+    e = 0.0
+    n = 1
+    previus = 0
+    difference = 100
+    print ("difference is" , difference)
+    while (difference > previus):               # While difference is greater than previus do this:
+        e = e + 1.0 / float(factorial(n))
+        n = n + 1
+        prev = e
+        difference = abs (e - previus)
+        print ("n is: " , n , " e is :" , e)
+    return e
+
+number = euler_calc(0.00000000000000000000000000000000000000000001)         # This is the exactitud what the program will use 
+print (number)

@@ -1,0 +1,15 @@
+ input("Give me the word that you want to search: ")
+filee = input("Give me a file where you will want to search the word: ")
+
+def search(word,filee):         # I define the function here
+    count = 0           # I declare the counter
+    file_object = open(filee , 'r')     # I define the variable
+    with open (filename) as openfile:          
+        for line in openfile:       # For each line in the file
+            for part in line.split():       # For each part in the line who were split
+                if word in part:        # If the word appears in that part add one to the counter
+                    count += 1
+    return ("The times that the word " + word + " appears is: " + str(count))       # Return this when the funtion is called
+
+
+print (search(word,filee))

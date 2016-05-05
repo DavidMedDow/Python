@@ -1,0 +1,14 @@
+x = input("Give me a word: ")
+
+def is_palindrome(x):   # Define my function
+    x = x.lower()   # I change all the word to lowercase in case that the user type a word with Capital letters on it
+    y=x[::-1]       # [::-1] is to change backwards the word that the user type
+    z = list(x)     # I separate each letter and i create a list with it; EX(Hello = 'H','E','L','L','O')
+    y2 = list(y)    # The same as before
+    if z == y2:
+        print("the word "+x+" is a palindrome")
+    else:
+        print("The word "+x+ " is not a palindrome")
+
+
+is_palindrome(x)    # I din't use the print because i don't want to the function to return something

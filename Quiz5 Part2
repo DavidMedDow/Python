@@ -1,0 +1,10 @@
+x = [1,2,3,6,5,9,12,15]     # Set the elements on the list
+
+def find_threes(x):     # Define the function
+    suma = 0
+    for i in list(x):   # For every elements in the list(x) do:
+        if i%3==0:      # If the element is divisible by 3
+            suma = suma + i     # Sum it
+    return suma         # Return the total of the sum
+
+print (find_threes(x))  #Print the function
